@@ -106,13 +106,24 @@ namespace EstructurasDeDatos
             String Hashed = Seguridad.Encriptar(txtContraseña.Text.Trim());
 
             Empleados iniciosesion = new Empleados();
-            iniciosesion.Insertar(txtNombre.Text.Trim(), cbRol.Text.Trim(), Hashed, txtUsuario.Text.Trim());
+            Int64 last_id =  iniciosesion.Insertar(txtNombre.Text.Trim(), cbRol.Text.Trim(), Hashed, txtUsuario.Text.Trim());
+
+            if (last_id > 0)
+            {
+                var accion = new EmpleadoAction(ActionType.Create, last_id, txtNombre.Text.Trim(), cbRol.Text.Trim());
+                actionStack.Push(accion);
+
+                MessageBox.Show("Usuario creado con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al crear el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
             Limpial();
 
             DesactivarTo();
-
-            MessageBox.Show("Usuario creado con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             LlenarDatagrid();
 
