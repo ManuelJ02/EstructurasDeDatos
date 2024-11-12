@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstructurasDeDatos", "EstructurasDeDatos\EstructurasDeDatos.csproj", "{64F46963-61FC-45E9-9C2A-01831FA9E3D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\Controllers.csproj", "{FE84029F-E9DD-42F7-AE09-72BE5E97348E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{64F46963-61FC-45E9-9C2A-01831FA9E3D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64F46963-61FC-45E9-9C2A-01831FA9E3D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64F46963-61FC-45E9-9C2A-01831FA9E3D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE84029F-E9DD-42F7-AE09-72BE5E97348E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE84029F-E9DD-42F7-AE09-72BE5E97348E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE84029F-E9DD-42F7-AE09-72BE5E97348E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE84029F-E9DD-42F7-AE09-72BE5E97348E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
