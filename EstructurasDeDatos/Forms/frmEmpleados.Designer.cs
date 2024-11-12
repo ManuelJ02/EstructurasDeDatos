@@ -54,15 +54,18 @@
             this.bsEmpleados = new System.Windows.Forms.BindingSource(this.components);
             this.dsEmpleados = new Controllers.DataSets.dsEmpleados();
             this.EmpleadosTableAdapter = new Controllers.DataSets.dsEmpleadosTableAdapters.EmpleadosTableAdapter();
-            this.pbBuscar = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.iDEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cargoEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this._editar = new System.Windows.Forms.DataGridViewImageColumn();
             this._eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pbBuscar = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnDeshacer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmpleadosBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -332,26 +335,6 @@
             // 
             this.EmpleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // pbBuscar
-            // 
-            this.pbBuscar.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Search;
-            this.pbBuscar.Location = new System.Drawing.Point(476, 243);
-            this.pbBuscar.Name = "pbBuscar";
-            this.pbBuscar.Size = new System.Drawing.Size(36, 41);
-            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBuscar.TabIndex = 62;
-            this.pbBuscar.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Filtre;
-            this.pictureBox2.Location = new System.Drawing.Point(90, 233);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 17);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 60;
-            this.pictureBox2.TabStop = false;
-            // 
             // iDEmpleadoDataGridViewTextBoxColumn
             // 
             this.iDEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "IDEmpleado";
@@ -388,6 +371,24 @@
             this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
             this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Edit;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Delete;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
             // _editar
             // 
             this._editar.HeaderText = "Editar";
@@ -406,12 +407,46 @@
             this._eliminar.ReadOnly = true;
             this._eliminar.Width = 50;
             // 
+            // pbBuscar
+            // 
+            this.pbBuscar.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Search;
+            this.pbBuscar.Location = new System.Drawing.Point(476, 243);
+            this.pbBuscar.Name = "pbBuscar";
+            this.pbBuscar.Size = new System.Drawing.Size(36, 41);
+            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBuscar.TabIndex = 62;
+            this.pbBuscar.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Filtre;
+            this.pictureBox2.Location = new System.Drawing.Point(90, 233);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 17);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 60;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnDeshacer
+            // 
+            this.btnDeshacer.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnDeshacer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeshacer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDeshacer.Location = new System.Drawing.Point(536, 31);
+            this.btnDeshacer.Name = "btnDeshacer";
+            this.btnDeshacer.Size = new System.Drawing.Size(96, 30);
+            this.btnDeshacer.TabIndex = 66;
+            this.btnDeshacer.Text = "Deshacer";
+            this.btnDeshacer.UseVisualStyleBackColor = false;
+            this.btnDeshacer.Click += new System.EventHandler(this.btnDeshacer_Click);
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(657, 503);
+            this.Controls.Add(this.btnDeshacer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgUsuarios);
@@ -478,6 +513,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn _editar;
         private System.Windows.Forms.DataGridViewImageColumn _eliminar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Button btnDeshacer;
     }
 }
 

@@ -3,6 +3,7 @@ using Controllers.DataSets.dsEmpleadosTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,7 @@ namespace Controlador
             q.Insertar(NombreEmpleado, CargoEmpleado, Contraseña, Usuario);
             int last_id = q.GetDataByLastID()[0].IDEmpleado;
             return last_id;
+
         }
 
         public Boolean Actualizar(string NombreEmpleado, string CargoEmpleado, string Contraseña, string Usuario)
@@ -81,6 +83,28 @@ namespace Controlador
             }
 
         }
+
+        public Boolean EliminarLast()
+        {
+            if (q.Connection.State != ConnectionState.Open)
+            {
+                q.Connection.Open();
+            }
+
+            try
+            {
+                q.Eliminar((int)this.IDEmpleado);
+                int Delete_last_id = q.GetDataByLastID()[0].IDEmpleado;
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+        }
+
 
         public Boolean TieneDatos()
         {

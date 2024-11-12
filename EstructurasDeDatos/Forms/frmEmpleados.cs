@@ -8,11 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+ 
+using EstructurasDeDatos.DataStructures;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using System.Security.Policy;
 
 namespace EstructurasDeDatos
 {
     public partial class frmEmpleados : Form
     {
+        private ActionStack actionStack = new ActionStack();
+
         public frmEmpleados()
         {
             InitializeComponent();
@@ -229,5 +235,45 @@ namespace EstructurasDeDatos
             txtContraseña.Text = String.Empty;
         }
 
+        private void btnDeshacer_Click(object sender, EventArgs e)
+        {
+            if (!actionStack.IsEmpty())
+            {
+                var ultimaAccion = actionStack.Pop();
+
+                String Hashed = Seguridad.Encriptar(txtContraseña.Text.Trim());
+
+                Empleados iniciosesion = new Empleados();
+
+                Int64 last_id = iniciosesion.Insertar(txtNombre.Text.Trim(), cbRol.Text.Trim(), Hashed, txtUsuario.Text.Trim());
+
+                txtID.Text = last_id.ToString();
+
+                iniciosesion = new Empleados(int.Parse(txtID.Text.Trim()));
+
+
+                bool Delete_last_id = iniciosesion.EliminarLast();
+
+                if (ultimaAccion.Tipo == ActionType.Create)
+                {
+                   
+
+                    if (Delete_last_id == true)
+                    {
+                        actionStack.Pop();
+                        iniciosesion.Eliminar();
+
+                        MessageBox.Show("La creación del usuario ha sido deshecha", "Deshacer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay acciones de creación para deshacer.", "Deshacer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                    LlenarDatagrid();
+
+                }
+            }
+        }
     }
 }

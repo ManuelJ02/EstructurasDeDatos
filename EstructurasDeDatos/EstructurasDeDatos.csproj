@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStructures\ActionStack.cs" />
+    <Compile Include="DataStructures\EmpleadoAction.cs" />
     <Compile Include="Forms\frmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,5 +95,6 @@
     <None Include="Resources\Icon_Search.png" />
     <None Include="Resources\Icon_Filtre.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
