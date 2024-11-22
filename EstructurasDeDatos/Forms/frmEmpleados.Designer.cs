@@ -33,6 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
             this.EmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bsEmpleados = new System.Windows.Forms.BindingSource(this.components);
+            this.dsEmpleados = new Controllers.DataSets.dsEmpleados();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbFiltar = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -51,26 +53,24 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.bsEmpleados = new System.Windows.Forms.BindingSource(this.components);
-            this.dsEmpleados = new Controllers.DataSets.dsEmpleados();
             this.EmpleadosTableAdapter = new Controllers.DataSets.dsEmpleadosTableAdapters.EmpleadosTableAdapter();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pbBuscar = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnDeshacer = new System.Windows.Forms.Button();
             this.iDEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cargoEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this._editar = new System.Windows.Forms.DataGridViewImageColumn();
             this._eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pbBuscar = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnDeshacer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmpleadosBindingSource)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEmpleados)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -113,7 +113,7 @@
             this.dgUsuarios.Location = new System.Drawing.Point(12, 304);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.ReadOnly = true;
-            this.dgUsuarios.Size = new System.Drawing.Size(620, 183);
+            this.dgUsuarios.Size = new System.Drawing.Size(445, 183);
             this.dgUsuarios.TabIndex = 63;
             this.dgUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellContentDoubleClick);
             // 
@@ -121,6 +121,16 @@
             // 
             this.EmpleadosBindingSource.DataMember = "Empleados";
             this.EmpleadosBindingSource.DataSource = this.bsEmpleados;
+            // 
+            // bsEmpleados
+            // 
+            this.bsEmpleados.DataSource = this.dsEmpleados;
+            this.bsEmpleados.Position = 0;
+            // 
+            // dsEmpleados
+            // 
+            this.dsEmpleados.DataSetName = "dsEmpleados";
+            this.dsEmpleados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtBuscar
             // 
@@ -321,55 +331,9 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Nombre Completo";
             // 
-            // bsEmpleados
-            // 
-            this.bsEmpleados.DataSource = this.dsEmpleados;
-            this.bsEmpleados.Position = 0;
-            // 
-            // dsEmpleados
-            // 
-            this.dsEmpleados.DataSetName = "dsEmpleados";
-            this.dsEmpleados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // EmpleadosTableAdapter
             // 
             this.EmpleadosTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDEmpleadoDataGridViewTextBoxColumn
-            // 
-            this.iDEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "IDEmpleado";
-            this.iDEmpleadoDataGridViewTextBoxColumn.HeaderText = "IDEmpleado";
-            this.iDEmpleadoDataGridViewTextBoxColumn.Name = "iDEmpleadoDataGridViewTextBoxColumn";
-            this.iDEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDEmpleadoDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // nombreEmpleadoDataGridViewTextBoxColumn
-            // 
-            this.nombreEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "NombreEmpleado";
-            this.nombreEmpleadoDataGridViewTextBoxColumn.HeaderText = "NombreEmpleado";
-            this.nombreEmpleadoDataGridViewTextBoxColumn.Name = "nombreEmpleadoDataGridViewTextBoxColumn";
-            this.nombreEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cargoEmpleadoDataGridViewTextBoxColumn
-            // 
-            this.cargoEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "CargoEmpleado";
-            this.cargoEmpleadoDataGridViewTextBoxColumn.HeaderText = "CargoEmpleado";
-            this.cargoEmpleadoDataGridViewTextBoxColumn.Name = "cargoEmpleadoDataGridViewTextBoxColumn";
-            this.cargoEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contraseñaDataGridViewTextBoxColumn
-            // 
-            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "Contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "Contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
-            this.contraseñaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // usuarioDataGridViewTextBoxColumn
-            // 
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
-            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -388,24 +352,6 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 50;
-            // 
-            // _editar
-            // 
-            this._editar.HeaderText = "Editar";
-            this._editar.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Edit;
-            this._editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this._editar.Name = "_editar";
-            this._editar.ReadOnly = true;
-            this._editar.Width = 50;
-            // 
-            // _eliminar
-            // 
-            this._eliminar.HeaderText = "Eliminar";
-            this._eliminar.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Delete;
-            this._eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this._eliminar.Name = "_eliminar";
-            this._eliminar.ReadOnly = true;
-            this._eliminar.Width = 50;
             // 
             // pbBuscar
             // 
@@ -440,12 +386,68 @@
             this.btnDeshacer.UseVisualStyleBackColor = false;
             this.btnDeshacer.Click += new System.EventHandler(this.btnDeshacer_Click);
             // 
+            // iDEmpleadoDataGridViewTextBoxColumn
+            // 
+            this.iDEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "IDEmpleado";
+            this.iDEmpleadoDataGridViewTextBoxColumn.HeaderText = "IDEmpleado";
+            this.iDEmpleadoDataGridViewTextBoxColumn.Name = "iDEmpleadoDataGridViewTextBoxColumn";
+            this.iDEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDEmpleadoDataGridViewTextBoxColumn.Visible = false;
+            this.iDEmpleadoDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // nombreEmpleadoDataGridViewTextBoxColumn
+            // 
+            this.nombreEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "NombreEmpleado";
+            this.nombreEmpleadoDataGridViewTextBoxColumn.HeaderText = "NombreEmpleado";
+            this.nombreEmpleadoDataGridViewTextBoxColumn.Name = "nombreEmpleadoDataGridViewTextBoxColumn";
+            this.nombreEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cargoEmpleadoDataGridViewTextBoxColumn
+            // 
+            this.cargoEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "CargoEmpleado";
+            this.cargoEmpleadoDataGridViewTextBoxColumn.HeaderText = "CargoEmpleado";
+            this.cargoEmpleadoDataGridViewTextBoxColumn.Name = "cargoEmpleadoDataGridViewTextBoxColumn";
+            this.cargoEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contraseñaDataGridViewTextBoxColumn
+            // 
+            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "Contraseña";
+            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "Contraseña";
+            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
+            this.contraseñaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.contraseñaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // _editar
+            // 
+            this._editar.HeaderText = "Editar";
+            this._editar.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Edit;
+            this._editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this._editar.Name = "_editar";
+            this._editar.ReadOnly = true;
+            this._editar.Width = 50;
+            // 
+            // _eliminar
+            // 
+            this._eliminar.HeaderText = "Eliminar";
+            this._eliminar.Image = global::EstructurasDeDatos.Properties.Resources.Icon_Delete;
+            this._eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this._eliminar.Name = "_eliminar";
+            this._eliminar.ReadOnly = true;
+            this._eliminar.Width = 50;
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(657, 503);
+            this.ClientSize = new System.Drawing.Size(648, 503);
             this.Controls.Add(this.btnDeshacer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -466,10 +468,10 @@
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmpleadosBindingSource)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEmpleados)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -506,6 +508,9 @@
         private Controllers.DataSets.dsEmpleados dsEmpleados;
         private Controllers.DataSets.dsEmpleadosTableAdapters.EmpleadosTableAdapter EmpleadosTableAdapter;
         private System.Windows.Forms.BindingSource EmpleadosBindingSource;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Button btnDeshacer;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cargoEmpleadoDataGridViewTextBoxColumn;
@@ -513,9 +518,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn _editar;
         private System.Windows.Forms.DataGridViewImageColumn _eliminar;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.Button btnDeshacer;
     }
 }
 

@@ -47,7 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataStructures\ActionStack.cs" />
+    <Compile Include="DataStructures\ColasSimples.cs" />
     <Compile Include="DataStructures\EmpleadoAction.cs" />
+    <Compile Include="Forms\frmColasSimples.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmColasSimples.Designer.cs">
+      <DependentUpon>frmColasSimples.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +63,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmColasSimples.resx">
+      <DependentUpon>frmColasSimples.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
