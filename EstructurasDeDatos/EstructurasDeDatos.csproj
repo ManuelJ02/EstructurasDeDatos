@@ -48,12 +48,20 @@
   <ItemGroup>
     <Compile Include="DataStructures\ColasSimples.cs" />
     <Compile Include="DataStructures\Empleado.cs" />
+    <Compile Include="DataStructures\ListaSimple.cs" />
+    <Compile Include="DataStructures\Nodo.cs" />
     <Compile Include="DataStructures\Pilas.cs" />
     <Compile Include="Forms\frmColasSimples.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmColasSimples.Designer.cs">
       <DependentUpon>frmColasSimples.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmListasSimples.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmListasSimples.Designer.cs">
+      <DependentUpon>frmListasSimples.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmPilas.cs">
       <SubType>Form</SubType>
@@ -65,6 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frmColasSimples.resx">
       <DependentUpon>frmColasSimples.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmListasSimples.resx">
+      <DependentUpon>frmListasSimples.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPilas.resx">
       <DependentUpon>frmPilas.cs</DependentUpon>
