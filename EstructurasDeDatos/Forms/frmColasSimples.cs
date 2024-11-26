@@ -1,5 +1,4 @@
-﻿using Controlador;
-using EstructurasDeDatos.DataStructures;
+﻿using EstructurasDeDatos.DataStructures;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
