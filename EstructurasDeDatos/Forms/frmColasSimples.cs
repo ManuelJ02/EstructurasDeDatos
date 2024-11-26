@@ -88,5 +88,10 @@ namespace EstructurasDeDatos.Forms
             public string Rol { get; set; }
             public string Usuario { get; set; }
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

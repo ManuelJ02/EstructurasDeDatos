@@ -1,6 +1,6 @@
 ﻿namespace EstructurasDeDatos.Forms
 {
-    partial class frmListasSimples
+    partial class frmColaCircular
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lstEmpleados = new System.Windows.Forms.ListBox();
+            this.btnEliminarEmpleado = new System.Windows.Forms.Button();
+            this.btnAgregarEmpleado = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,21 +39,48 @@
             this.txtRol = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEliminarEmpleado = new System.Windows.Forms.Button();
-            this.btnAgregarEmpleado = new System.Windows.Forms.Button();
-            this.lstEmpleados = new System.Windows.Forms.ListBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lstEmpleados
+            // 
+            this.lstEmpleados.FormattingEnabled = true;
+            this.lstEmpleados.Location = new System.Drawing.Point(35, 242);
+            this.lstEmpleados.Name = "lstEmpleados";
+            this.lstEmpleados.Size = new System.Drawing.Size(255, 186);
+            this.lstEmpleados.TabIndex = 21;
+            // 
+            // btnEliminarEmpleado
+            // 
+            this.btnEliminarEmpleado.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnEliminarEmpleado.Location = new System.Drawing.Point(375, 116);
+            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
+            this.btnEliminarEmpleado.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarEmpleado.TabIndex = 20;
+            this.btnEliminarEmpleado.Text = "Eliminar";
+            this.btnEliminarEmpleado.UseVisualStyleBackColor = false;
+            this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminarEmpleado_Click);
+            // 
+            // btnAgregarEmpleado
+            // 
+            this.btnAgregarEmpleado.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnAgregarEmpleado.Location = new System.Drawing.Point(375, 66);
+            this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
+            this.btnAgregarEmpleado.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarEmpleado.TabIndex = 19;
+            this.btnAgregarEmpleado.Text = "Agregar";
+            this.btnAgregarEmpleado.UseVisualStyleBackColor = false;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 24);
+            this.label4.Location = new System.Drawing.Point(9, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 16);
-            this.label4.TabIndex = 13;
+            this.label4.TabIndex = 18;
             this.label4.Text = "Datos de Empleado";
             // 
             // groupBox1
@@ -62,10 +92,10 @@
             this.groupBox1.Controls.Add(this.txtRol);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(26, 43);
+            this.groupBox1.Location = new System.Drawing.Point(12, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(342, 183);
-            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
             // label3
@@ -116,60 +146,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
-            // btnEliminarEmpleado
-            // 
-            this.btnEliminarEmpleado.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnEliminarEmpleado.Location = new System.Drawing.Point(389, 126);
-            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
-            this.btnEliminarEmpleado.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarEmpleado.TabIndex = 15;
-            this.btnEliminarEmpleado.Text = "Eliminar";
-            this.btnEliminarEmpleado.UseVisualStyleBackColor = false;
-            this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminarEmpleado_Click);
-            // 
-            // btnAgregarEmpleado
-            // 
-            this.btnAgregarEmpleado.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnAgregarEmpleado.Location = new System.Drawing.Point(389, 76);
-            this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
-            this.btnAgregarEmpleado.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarEmpleado.TabIndex = 14;
-            this.btnAgregarEmpleado.Text = "Agregar";
-            this.btnAgregarEmpleado.UseVisualStyleBackColor = false;
-            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
-            // 
-            // lstEmpleados
-            // 
-            this.lstEmpleados.FormattingEnabled = true;
-            this.lstEmpleados.Location = new System.Drawing.Point(49, 252);
-            this.lstEmpleados.Name = "lstEmpleados";
-            this.lstEmpleados.Size = new System.Drawing.Size(255, 186);
-            this.lstEmpleados.TabIndex = 16;
-            // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.LightSalmon;
-            this.btnRegresar.Location = new System.Drawing.Point(401, 402);
+            this.btnRegresar.Location = new System.Drawing.Point(375, 384);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(75, 36);
-            this.btnRegresar.TabIndex = 24;
+            this.btnRegresar.Size = new System.Drawing.Size(75, 44);
+            this.btnRegresar.TabIndex = 22;
             this.btnRegresar.Text = "Regresar a Menu";
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // frmListasSimples
+            // frmColaCircular
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 450);
+            this.ClientSize = new System.Drawing.Size(469, 450);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.lstEmpleados);
             this.Controls.Add(this.btnEliminarEmpleado);
             this.Controls.Add(this.btnAgregarEmpleado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmListasSimples";
-            this.Text = "frmListasSimples";
+            this.Name = "frmColaCircular";
+            this.Text = "frmColaCircular";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -179,6 +179,9 @@
 
         #endregion
 
+        private System.Windows.Forms.ListBox lstEmpleados;
+        private System.Windows.Forms.Button btnEliminarEmpleado;
+        private System.Windows.Forms.Button btnAgregarEmpleado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
@@ -187,9 +190,6 @@
         private System.Windows.Forms.TextBox txtRol;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnEliminarEmpleado;
-        private System.Windows.Forms.Button btnAgregarEmpleado;
-        private System.Windows.Forms.ListBox lstEmpleados;
         private System.Windows.Forms.Button btnRegresar;
     }
 }

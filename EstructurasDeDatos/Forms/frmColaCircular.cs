@@ -11,23 +11,24 @@ using System.Windows.Forms;
 
 namespace EstructurasDeDatos.Forms
 {
-    public partial class frmListasSimples : Form
+    public partial class frmColaCircular : Form
     {
-        private ListaSimple lista;
+        private ColaCircular cola;
 
-        public frmListasSimples()
+        public frmColaCircular()
         {
             InitializeComponent();
 
-            lista = new ListaSimple();
+            cola = new ColaCircular(5); // Creamos la cola con capacidad para 5 empleados
         }
 
+        // Actualizar el ListBox con los empleados de la cola
         private void ActualizarListaEmpleados()
         {
             lstEmpleados.Items.Clear(); // Limpiar el ListBox antes de actualizarlo
 
-            // Obtener todos los empleados de la lista y agregarlos al ListBox
-            List<Empleado> empleados = lista.ObtenerEmpleados();
+            // Obtener todos los empleados de la cola y agregarlos al ListBox
+            List<Empleado> empleados = cola.ObtenerEmpleados();
             foreach (Empleado empleado in empleados)
             {
                 lstEmpleados.Items.Add(empleado.ToString());
@@ -48,23 +49,26 @@ namespace EstructurasDeDatos.Forms
             // Crear un nuevo objeto Empleado
             Empleado empleado = new Empleado(txtNombre.Text, txtUsuario.Text, txtRol.Text);
 
-            // Agregar el empleado a la lista
-            lista.AgregarEmpleado(empleado);
-
-            // Actualizar la lista en el ListBox
-            ActualizarListaEmpleados();
-
-            // Limpiar los campos de texto
-            LimpiarCampos();
+            // Encolar el empleado en la cola
+            if (cola.Encolar(empleado))
+            {
+                // Actualizamos el ListBox con los empleados de la cola
+                ActualizarListaEmpleados();
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo agregar el empleado, la cola está llena.");
+            }
         }
 
         private void btnEliminarEmpleado_Click(object sender, EventArgs e)
         {
-            Empleado empleado = lista.EliminarEmpleado();
+            Empleado empleado = cola.Desencolar();
             if (empleado != null)
             {
                 MessageBox.Show("Empleado eliminado: " + empleado.ToString());
-                ActualizarListaEmpleados(); // Actualizar el ListBox
+                ActualizarListaEmpleados(); // Actualizar la lista
             }
         }
 

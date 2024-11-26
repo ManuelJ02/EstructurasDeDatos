@@ -39,6 +39,8 @@
             this.btnDesapilarEmpleado = new System.Windows.Forms.Button();
             this.btnApilarEmpleado = new System.Windows.Forms.Button();
             this.lstEmpleados = new System.Windows.Forms.ListBox();
+            this.lblEstadoEmpleado = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,11 +147,32 @@
             this.lstEmpleados.Size = new System.Drawing.Size(255, 186);
             this.lstEmpleados.TabIndex = 15;
             // 
+            // lblEstadoEmpleado
+            // 
+            this.lblEstadoEmpleado.AutoSize = true;
+            this.lblEstadoEmpleado.Location = new System.Drawing.Point(296, 297);
+            this.lblEstadoEmpleado.Name = "lblEstadoEmpleado";
+            this.lblEstadoEmpleado.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoEmpleado.TabIndex = 16;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.LightSalmon;
+            this.btnRegresar.Location = new System.Drawing.Point(396, 450);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 36);
+            this.btnRegresar.TabIndex = 25;
+            this.btnRegresar.Text = "Regresar a Menu";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // frmPilas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 498);
+            this.Controls.Add(this.btnRegresar);
+            this.Controls.Add(this.lblEstadoEmpleado);
             this.Controls.Add(this.lstEmpleados);
             this.Controls.Add(this.btnDesapilarEmpleado);
             this.Controls.Add(this.btnApilarEmpleado);
@@ -177,5 +200,7 @@
         private System.Windows.Forms.Button btnDesapilarEmpleado;
         private System.Windows.Forms.Button btnApilarEmpleado;
         private System.Windows.Forms.ListBox lstEmpleados;
+        private System.Windows.Forms.Label lblEstadoEmpleado;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }
