@@ -25,26 +25,32 @@ namespace EstructurasDeDatos.Forms
         private void btnPilas_Click(object sender, EventArgs e)
         {
             Form formulario = new frmPilas();
-            formulario.Show();
+            formulario.ShowDialog();
 
         }
 
         private void btnColasSimples_Click(object sender, EventArgs e)
         {
             Form formulario = new frmColasSimples();
-            formulario.Show();
+            formulario.ShowDialog();
         }
 
         private void tnListasSimples_Click(object sender, EventArgs e)
         {
             Form formulario = new frmListasSimples();
-            formulario.Show();
+            formulario.ShowDialog();
         }
 
         private void btnColasCirculares_Click(object sender, EventArgs e)
         {
             Form formulario = new frmColaCircular();
-            formulario.Show();
+            formulario.ShowDialog();
+        }
+
+        private void btnListasDobles_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmColaCircular();
+            formulario.ShowDialog();
         }
     }
 }

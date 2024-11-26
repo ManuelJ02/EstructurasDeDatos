@@ -36,6 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tnListasSimples = new System.Windows.Forms.Button();
             this.btnListasDobles = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnBubbleSort = new System.Windows.Forms.Button();
+            this.btnQuickSort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -122,6 +125,37 @@
             this.btnListasDobles.TabIndex = 7;
             this.btnListasDobles.Text = "Listas Dobles";
             this.btnListasDobles.UseVisualStyleBackColor = false;
+            this.btnListasDobles.Click += new System.EventHandler(this.btnListasDobles_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 272);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(204, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Algoritmos de Ordenamiento";
+            // 
+            // btnBubbleSort
+            // 
+            this.btnBubbleSort.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBubbleSort.Location = new System.Drawing.Point(97, 300);
+            this.btnBubbleSort.Name = "btnBubbleSort";
+            this.btnBubbleSort.Size = new System.Drawing.Size(84, 23);
+            this.btnBubbleSort.TabIndex = 9;
+            this.btnBubbleSort.Text = "BubbleSort";
+            this.btnBubbleSort.UseVisualStyleBackColor = false;
+            // 
+            // btnQuickSort
+            // 
+            this.btnQuickSort.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnQuickSort.Location = new System.Drawing.Point(196, 300);
+            this.btnQuickSort.Name = "btnQuickSort";
+            this.btnQuickSort.Size = new System.Drawing.Size(84, 23);
+            this.btnQuickSort.TabIndex = 10;
+            this.btnQuickSort.Text = "QuickSort";
+            this.btnQuickSort.UseVisualStyleBackColor = false;
             // 
             // frmMenu
             // 
@@ -129,6 +163,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(453, 509);
+            this.Controls.Add(this.btnQuickSort);
+            this.Controls.Add(this.btnBubbleSort);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnListasDobles);
             this.Controls.Add(this.tnListasSimples);
             this.Controls.Add(this.label3);
@@ -154,5 +191,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button tnListasSimples;
         private System.Windows.Forms.Button btnListasDobles;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnBubbleSort;
+        private System.Windows.Forms.Button btnQuickSort;
     }
 }

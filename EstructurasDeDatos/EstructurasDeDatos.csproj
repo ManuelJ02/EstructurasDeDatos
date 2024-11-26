@@ -49,8 +49,10 @@
     <Compile Include="DataStructures\ColaCircular.cs" />
     <Compile Include="DataStructures\ColasSimples.cs" />
     <Compile Include="DataStructures\Empleado.cs" />
+    <Compile Include="DataStructures\ListaDoble.cs" />
     <Compile Include="DataStructures\ListaSimple.cs" />
     <Compile Include="DataStructures\Nodo.cs" />
+    <Compile Include="DataStructures\NodoDoble.cs" />
     <Compile Include="DataStructures\Pilas.cs" />
     <Compile Include="Forms\frmColaCircular.cs">
       <SubType>Form</SubType>
@@ -63,6 +65,12 @@
     </Compile>
     <Compile Include="Forms\frmColasSimples.Designer.cs">
       <DependentUpon>frmColasSimples.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmListaDoble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmListaDoble.Designer.cs">
+      <DependentUpon>frmListaDoble.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmListasSimples.cs">
       <SubType>Form</SubType>
@@ -89,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmColasSimples.resx">
       <DependentUpon>frmColasSimples.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmListaDoble.resx">
+      <DependentUpon>frmListaDoble.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmListasSimples.resx">
       <DependentUpon>frmListasSimples.cs</DependentUpon>
