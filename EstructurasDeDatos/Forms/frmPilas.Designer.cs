@@ -142,7 +142,7 @@
             // lstEmpleados
             // 
             this.lstEmpleados.FormattingEnabled = true;
-            this.lstEmpleados.Location = new System.Drawing.Point(35, 284);
+            this.lstEmpleados.Location = new System.Drawing.Point(41, 286);
             this.lstEmpleados.Name = "lstEmpleados";
             this.lstEmpleados.Size = new System.Drawing.Size(255, 186);
             this.lstEmpleados.TabIndex = 15;

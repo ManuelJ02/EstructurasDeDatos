@@ -9,73 +9,65 @@ namespace EstructurasDeDatos.DataStructures
 {
     public class Pilas
     {
-        private Empleado[] arreglo;
-        private int cima;
+        private List<Empleado> empleados;
         private int capacidad;
 
-        // Constructor
         public Pilas(int capacidad)
         {
             this.capacidad = capacidad;
-            arreglo = new Empleado[capacidad];
-            cima = -1;
+            empleados = new List<Empleado>();
         }
 
-        // Método para verificar si la pila está vacía
-        public bool EstaVacia()
-        {
-            return cima == -1;
-        }
-
-        // Método para verificar si la pila está llena
-        public bool EstaLlena()
-        {
-            return cima == capacidad - 1;
-        }
-
-        // Método para agregar un empleado a la pila (apilar)
+        // Método para apilar
         public bool Apilar(Empleado empleado)
         {
-            if (EstaLlena())
+            if (empleados.Count < capacidad)
             {
-                MessageBox.Show("La pila está llena");
-                return false;
+                empleados.Add(empleado);
+                return true;
             }
-            arreglo[++cima] = empleado;
-            return true;
+            return false;
         }
 
-        // Método para quitar un empleado de la pila (desapilar)
+        // Método para desapilar
         public Empleado Desapilar()
         {
-            if (EstaVacia())
+            if (empleados.Count > 0)
             {
-                MessageBox.Show("La pila está vacía");
-                return null;
+                Empleado empleado = empleados.Last();
+                empleados.RemoveAt(empleados.Count - 1);
+                return empleado;
             }
-            return arreglo[cima--];
+            return null; // Retornar null si la pila está vacía
         }
 
-        // Método para obtener el empleado en la cima de la pila
+        // Método para obtener la cima de la pila
         public Empleado Cima()
         {
-            if (EstaVacia())
+            if (empleados.Count > 0)
             {
-                MessageBox.Show("La pila está vacía");
-                return null;
+                return empleados.Last(); // Obtener el último empleado de la pila
             }
-            return arreglo[cima];
+            return null; // Retornar null si la pila está vacía
         }
 
-        // Método para obtener un empleado de la pila por su índice
+        // Método para obtener un empleado por índice
         public Empleado this[int index]
         {
             get
             {
-                if (index < 0 || index > cima) return null;
-                return arreglo[index];
+                if (index >= 0 && index < empleados.Count)
+                    return empleados[index];
+                return null; // Retornar null si el índice es inválido
             }
         }
+
+        // Método para obtener la cantidad de elementos en la pila
+        public int Count()
+        {
+            return empleados.Count;
+        }
     }
+
 
 }

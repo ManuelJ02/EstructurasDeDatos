@@ -26,13 +26,24 @@ namespace EstructurasDeDatos.Forms
         // Método para actualizar el ListBox con los empleados en la pila
         private void ActualizarListaEmpleados()
         {
+
             lstEmpleados.Items.Clear(); // Limpiar la lista antes de actualizarla
 
-            // Recorrer la pila y agregar cada empleado al ListBox
-            for (int i = 0; i <= pila.Cima().ToString().Length; i++)
+            // Verificar si la pila tiene elementos
+            if (pila != null && pila.Count() > 0) // Count() debería ser un método que devuelve el número de elementos en la pila.
             {
-                lstEmpleados.Items.Add(pila[i].ToString());
+                // Recorrer la pila y agregar cada empleado al ListBox
+                for (int i = 0; i < pila.Count(); i++) // Asegúrate de que Count() sea el número de elementos en la pila
+                {
+                    Empleado empleado = pila[i]; // Si pila[i] devuelve un empleado
+                    lstEmpleados.Items.Add(empleado.ToString());
+                }
             }
+            else
+            {
+                MessageBox.Show("La pila está vacía.");
+            }
+
         }
 
         private void btnApilarEmpleado_Click(object sender, EventArgs e)
