@@ -54,6 +54,12 @@
     <Compile Include="DataStructures\Nodo.cs" />
     <Compile Include="DataStructures\NodoDoble.cs" />
     <Compile Include="DataStructures\Pilas.cs" />
+    <Compile Include="Forms\frmBubbleSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBubbleSort.Designer.cs">
+      <DependentUpon>frmBubbleSort.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmColaCircular.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,8 +96,23 @@
     <Compile Include="Forms\frmPilas.Designer.cs">
       <DependentUpon>frmPilas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmQuickSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmQuickSort.Designer.cs">
+      <DependentUpon>frmQuickSort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmShellSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmShellSort.Designer.cs">
+      <DependentUpon>frmShellSort.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmBubbleSort.resx">
+      <DependentUpon>frmBubbleSort.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmColaCircular.resx">
       <DependentUpon>frmColaCircular.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPilas.resx">
       <DependentUpon>frmPilas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmQuickSort.resx">
+      <DependentUpon>frmQuickSort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShellSort.resx">
+      <DependentUpon>frmShellSort.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

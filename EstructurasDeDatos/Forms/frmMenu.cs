@@ -52,5 +52,23 @@ namespace EstructurasDeDatos.Forms
             Form formulario = new frmColaCircular();
             formulario.ShowDialog();
         }
+
+        private void btnBubbleSort_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmBubbleSort();
+            formulario.ShowDialog();
+        }
+
+        private void btnShellSort_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmShellSort();
+            formulario.ShowDialog();
+        }
+
+        private void btnQuickSort_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmQuickSort();
+            formulario.ShowDialog();
+        }
     }
 }

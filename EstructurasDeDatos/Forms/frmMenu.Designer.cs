@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnBubbleSort = new System.Windows.Forms.Button();
             this.btnQuickSort = new System.Windows.Forms.Button();
+            this.btnShellSort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -146,6 +147,7 @@
             this.btnBubbleSort.TabIndex = 9;
             this.btnBubbleSort.Text = "BubbleSort";
             this.btnBubbleSort.UseVisualStyleBackColor = false;
+            this.btnBubbleSort.Click += new System.EventHandler(this.btnBubbleSort_Click);
             // 
             // btnQuickSort
             // 
@@ -156,6 +158,18 @@
             this.btnQuickSort.TabIndex = 10;
             this.btnQuickSort.Text = "QuickSort";
             this.btnQuickSort.UseVisualStyleBackColor = false;
+            this.btnQuickSort.Click += new System.EventHandler(this.btnQuickSort_Click);
+            // 
+            // btnShellSort
+            // 
+            this.btnShellSort.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnShellSort.Location = new System.Drawing.Point(296, 300);
+            this.btnShellSort.Name = "btnShellSort";
+            this.btnShellSort.Size = new System.Drawing.Size(84, 23);
+            this.btnShellSort.TabIndex = 11;
+            this.btnShellSort.Text = "ShellSort";
+            this.btnShellSort.UseVisualStyleBackColor = false;
+            this.btnShellSort.Click += new System.EventHandler(this.btnShellSort_Click);
             // 
             // frmMenu
             // 
@@ -163,6 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(453, 509);
+            this.Controls.Add(this.btnShellSort);
             this.Controls.Add(this.btnQuickSort);
             this.Controls.Add(this.btnBubbleSort);
             this.Controls.Add(this.label4);
@@ -194,5 +209,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBubbleSort;
         private System.Windows.Forms.Button btnQuickSort;
+        private System.Windows.Forms.Button btnShellSort;
     }
 }
