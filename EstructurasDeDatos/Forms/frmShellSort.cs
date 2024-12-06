@@ -69,7 +69,7 @@ namespace EstructurasDeDatos.Forms
 
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
         {
-            // Validar que los campos no estén vacíos
+            // Validar que los campos no estén vacío
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtRol.Text))
             {
                 MessageBox.Show("Por favor, ingrese todos los datos.");
